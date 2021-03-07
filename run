@@ -95,6 +95,11 @@ if [ -n "${UMASK}" ]; then
 fi
 
 #
+# Add capabilities to nmap so that --privileged works
+#
+setcap cap_net_raw+ep /usr/bin/nmap
+
+#
 # Run homeassistant
 #
 
