@@ -9,8 +9,8 @@ PGID="${PGID:-1000}"
 UMASK="${UMASK:-}"
 
 # If s6-applyuidgid is missing, install s6-ipcserver
-REQUIRED_PACKAGES=""
-type -t s6-applyuidgid >/dev/null || REQUIRED_PACKAGES="s6-ipcserver"
+REQUIRED_PACKAGES="libcap"
+type -t s6-applyuidgid >/dev/null || REQUIRED_PACKAGES="s6-ipcserver libcap"
 
 PACKAGES="${PACKAGES:-}"
 
